@@ -63,11 +63,12 @@ def GUI():
     selected = tk.IntVar()
     pet1  = PhotoImage(file = impath +'\\1idle.gif\\')
     pet2 = PhotoImage(file = impath +'\\2idle.gif\\')
+    pet3 = PhotoImage(file = impath +'\\3idle.gif\\')
 
 
     rad1 = tk.Radiobutton(window, text='Pet 1', image = pet1, value=1, variable=selected)
     rad2 = tk.Radiobutton(window, text='Pet 2', image = pet2, value=2, variable=selected)
-    rad3 = tk.Radiobutton(window, text='Pet 3', value=3, variable=selected)
+    rad3 = tk.Radiobutton(window, text='Pet 3', image = pet3, value=3, variable=selected)
     
     button1 = tk.Button(window, text="Select", command=clicked)                    
     button2 = tk.Button(window, text="Quit", command=do_exit)
