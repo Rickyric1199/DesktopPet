@@ -25,7 +25,6 @@ def do_exit():
 
 
 def pet_1():
-    print('doing the red thing')
     global pet
     pet = '1'
 
@@ -52,6 +51,7 @@ def clicked():
         pet_3()
     else:
         print('an error occurred, the wrong value was recieved')
+    
 
 
 def GUI():
@@ -61,25 +61,30 @@ def GUI():
     window = tk.Tk()
     window.title("Select Pet")
     selected = tk.IntVar()
-    pet1  = PhotoImage(file = impath +'\\1idle.gif\\')
+    pet1 = PhotoImage(file = impath +'\\1idle.gif\\')
     pet2 = PhotoImage(file = impath +'\\2idle.gif\\')
     pet3 = PhotoImage(file = impath +'\\3idle.gif\\')
-
-
-    rad1 = tk.Radiobutton(window, text='Pet 1', image = pet1, value=1, variable=selected)
-    rad2 = tk.Radiobutton(window, text='Pet 2', image = pet2, value=2, variable=selected)
-    rad3 = tk.Radiobutton(window, text='Pet 3', image = pet3, value=3, variable=selected)
+    q = PhotoImage(file = impath +'\\EXIT.gif\\')
+    select = PhotoImage(file = impath +'\\Select.gif\\')
+    start = PhotoImage(file = impath +'\\Start.gif\\')
     
-    button1 = tk.Button(window, text="Select", command=clicked)                    
-    button2 = tk.Button(window, text="Quit", command=do_exit)
-    button3 = tk.Button(window, text="Start", command = window.destroy)
+
+
+
+    rad1 = tk.Radiobutton(window, image = pet1, value=1, variable=selected)
+    rad2 = tk.Radiobutton(window, image = pet2, value=2, variable=selected)
+    rad3 = tk.Radiobutton(window, image = pet3, value=3, variable=selected)
+    
+    button1 = tk.Button(window, text="Select", image = select, command=clicked)                    
+    button2 = tk.Button(window, text="Quit", image = q, command=do_exit)
+    button3 = tk.Button(window, text="Start", image = start, command = window.destroy)
 
     rad1.grid(column=0, row=0)
     rad2.grid(column=1, row=0)
     rad3.grid(column=2, row=0)
-    button1.grid(column=6, row=0)
-    button2.grid(column=6, row=1)
-    button3.grid(column=6, row=2)
+    button1.grid(column=2, row=1)
+    button2.grid(column=1, row=1)
+    button3.grid(column=0, row=1)
 
     window.mainloop()
 
